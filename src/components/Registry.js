@@ -3,14 +3,14 @@ import Search from "./Search"
 import NewPlanetForm from "./NewPlanetForm"
 import PlanetList from "./PlanetList"
 
-function Registry() {
+function Registry({planets, url, addPlanet, search, updateSearch}) {
 
     return(
         <div className="registry">
-            <Search />
+            <Search search={search} updateSearch={updateSearch}/>
             <div className="content">
-                <PlanetList />
-                <NewPlanetForm />
+                <PlanetList planets={planets} search={search}/>
+                <NewPlanetForm url={url} addPlanet={addPlanet}/>
             </div>
         </div>
     )
